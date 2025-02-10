@@ -1,0 +1,237 @@
+/*style.css*/
+body {
+    font-family: OCR A Std, monospace;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color:pink;
+}
+body {
+    transition: background-position 0.5s ease-out;
+}
+body.griffith {
+    background-image: url('imgs/griffith.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-color:black;
+    margin: 0; 
+    padding: 0;
+    color:white;
+}
+
+body.gracie {
+    background-image: url('imgs/hill.png');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-color:black;
+    margin: 0;
+    padding: 0; 
+    position: relative;
+    color:white;
+}
+
+body.taxi {
+    background-image: url('imgs/backseat.png');
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat; 
+    background-color:black;
+    margin: 0;
+    padding: 0; 
+    position: relative; 
+    color:white;
+}
+
+
+body.after {
+    background-image: url('imgs/driving.webp');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-color:black;
+    margin: 0;
+    padding: 0; 
+    position: relative; 
+    color:white;
+}
+
+body.huntington {
+    background-image: url('imgs/huntington.png');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-color:black;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+body.plane {
+    background-image: url('imgs/LAX-JFK.jpg');
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color:black;
+    margin: 0; 
+    padding: 0;
+    position: relative;
+    
+}
+body.valentine {
+    background-image: url('imgs/harem.png');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-color:pink;
+    margin: 0;
+    padding: 0; 
+    position: relative;
+}
+
+p.plane {
+    background: rgba(250, 250, 250, 0.8);
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+p.taxi {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size:large;
+}
+
+p {
+    font-size: 18px;
+    width: 80%;
+    margin-top: 100px; 
+}
+
+video{
+    position:relative;
+    top: 100px;
+    z-index: 3;
+}
+
+#backBtn, #nextBtn {
+    background-color:transparent;
+    border: none;         
+    cursor: pointer; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+}
+
+#backBtn {
+    background-image: url('imgs/backarrow.png');
+    position:absolute;
+    left:10%;
+    bottom: 10%;
+}
+
+#nextBtn {
+    background-image: url('imgs/arrow.png');
+    position:absolute;
+    right:10%;
+    bottom: 10%;
+}
+
+#nextBtn:hover, #backBtn:hover {
+    opacity: 0.8;
+}
+
+#yesBtn {
+    position: absolute;
+    left:30%;
+    bottom:15%;
+    
+}
+
+#noBtn {
+    position: absolute;
+    right:30%;
+    bottom:15%;
+}
+
+
+@keyframes hearts {
+    0% { opacity: 0; transform: scale(0); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.hearts {
+    position: absolute;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    animation: hearts 3s ease-in-out infinite;
+    font-size: 50px;
+    color: red;
+    transform-origin: center;
+}
+
+.heart:nth-child(1) { animation-delay: 0s; }
+.heart:nth-child(2) { animation-delay: 0.2s; }
+.heart:nth-child(3) { animation-delay: 0.4s; }
+.heart:nth-child(4) { animation-delay: 0.6s; }
+.heart:nth-child(5) { animation-delay: 0.8s; }
+.heart:nth-child(6) { animation-delay: 1s; }
+
+.cat-gif {
+    position: absolute;
+    animation: hearts 8s ease-in-out infinite;
+    width: 80px;
+    height: 50px;
+}
+.cat-gif:nth-child(1) { animation-delay: 0s; }
+.cat-gif:nth-child(2) { animation-delay: 0.3s; }
+.cat-gif:nth-child(3) { animation-delay: 0.5; }
+
+
+@media (max-width: 768px) { 
+    body {
+        background-size: auto 100vh;
+        background-position: center center;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    body {
+        background-size: 100vw auto;
+        background-position: top center;
+    }
+}

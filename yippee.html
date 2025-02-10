@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yippee! 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExemowdWxranRiOXZqM2tpdzQ0MGV3NDc0NmRiY25wNm45ajFoendzeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            animation: floatHearts 5s ease-in-out infinite;
+        }
+
+        @keyframes floatHearts {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-200px) scale(1.2); opacity: 0.6; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        /* Hearts and gifs should randomly appear all over the page */
+        .heart:nth-child(even) {
+            animation-duration: 6s;
+        }
+
+        .heart:nth-child(odd) {
+            animation-duration: 4s;
+        }
+    </style>
+</head>
+<body>
+    <div id="heartsContainer"></div>
+
+    <script>
+        // Add hearts to the page at random positions
+        function createHearts() {
+            const heartCount = 50;
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement("span");
+                heart.classList.add("heart");
+                heart.textContent = "❤️";
+
+                // Randomize the position of the heart on the page
+                const randomX = Math.random() * window.innerWidth; // Random X position
+                const randomY = Math.random() * window.innerHeight; // Random Y position
+                heart.style.left = `${randomX}px`;
+                heart.style.top = `${randomY}px`;
+
+                document.body.appendChild(heart);
+            }
+        }
+
+        // Call the function to create hearts
+        createHearts();
+    </script>
+</body>
+</html>
